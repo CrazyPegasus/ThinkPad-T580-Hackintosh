@@ -43,7 +43,7 @@
 -----------
 * WWAN（无模块）
 * TrackPad Synaptics指纹识别器无法驱动
-* BIOS里设置Thunderbolt BIOS Assist为Disable，“Security level” :No Security(允许自动连接 Thunderbolt 设备)。
+* BIOS里设置Thunderbolt BIOS Assist为Disable(Enable雷电由BIOS控制决定，Disabled雷电由操作系统控制决定)，“Security level” :No Security(允许自动连接 Thunderbolt 设备和TYPEC)。
 * BIOS里设置usb项Always on USB为enable，下面子项Charge in Battery Mode设置为enable（这样雷电口type-c就可以热插拔type-c外设）
 * 关闭安全启动
 
