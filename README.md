@@ -61,7 +61,9 @@ UEFI BIOS固件修订
 --------
 
 
+
 # English
+--------
 
 # MacOS on Lenovo ThinkPad T580 (this guide also applies to P52s i7-8550u, 8250u should theoretically be universal, not T480s)
 
@@ -79,11 +81,11 @@ Lenovo ThinkPad T580 [4k UHD display: 3840x2160 (BOE BOE NV156QUM-N44, non-touch
 
 * Intel Ethernet I219-V4 wired network card
 
-* Mac original wireless network card bcm94360cs2 (original Intel AC8265 does not work properly)
+* ~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 does not work properly)~~
 
-* Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code
+* ~~Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code~~
 
-* Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free
+* ~~Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free~~
 
 * Wireless network card changed to DW1820A disassembly card (original DELL disassembly card does not require shielding pins)
 
