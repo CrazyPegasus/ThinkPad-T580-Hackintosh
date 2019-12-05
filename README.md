@@ -1,4 +1,5 @@
 # ThinkPad-T580-Hackintosh
+# 中文版
 # 联想ThinkPad T580上的macOS（本指南也适用于P52s i7-8550u，8250u理论上应该通用，不适用T480s）
 
 此存储库包含10.14,10.15在Lenovo ThinkPad T580上运行macOS（目前为Mojave，Catalina ）的示例配置
@@ -58,3 +59,66 @@ UEFI BIOS固件修订
 
 备注
 --------
+
+
+# English
+
+# MacOS on Lenovo ThinkPad T580 (this guide also applies to P52s i7-8550u, 8250u should theoretically be universal, not T480s)
+
+This repository contains 10.14,10.15 example configurations running macOS (currently Mojave, Catalina) on Lenovo ThinkPad T580
+Machine configuration table and driving situation
+--------------------------------------------------------------------------
+
+Lenovo ThinkPad T580 [4k UHD display: 3840x2160 (BOE BOE NV156QUM-N44, non-touch)]
+--------------------------------------------------------------------------
+* Intel i7-8550U CPU
+
+* 16GB RAM DDR4 2400-SODIMM
+
+* Toshiba Q200EX SSD + 128G Toshiba NVMe Lenovo with strap
+
+* Intel Ethernet I219-V4 wired network card
+
+* Mac original wireless network card bcm94360cs2 (original Intel AC8265 does not work properly)
+
+* Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code
+
+* Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free
+
+* Wireless network card changed to DW1820A disassembly card (original DELL disassembly card does not require shielding pins)
+
+* Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11, which supports automatic switching between the headset and the built-in speaker.
+
+* Intel UHD Graphics 620 (Nvidia MX150 is disabled, macOS does not support Optimus)
+
+* ACPI hot patch power management and dual battery status
+
+* SD card reader uses usb3.0 channel, you need to open this USB port to use
+
+* Thunderbolt 3 [Thunderbolt BIOS Assist needs to be set in the BIOS: Disable, "Security level": No Security (Allows automatic connection to Thunderbolt devices). In this way, the front-end USB type-c port can work in macOS and can be hot-plugged. DP / HDMI via USB type-C: the video works normally, the docking station is normal, the Thunderbolt 3 device works normally, and the hot-plug is normal
+
+* The machine comes with a separate HDMI port: it can output 4k @ 30HZ to the display. When connected, the audio device HDMI is displayed and used normally.
+
+* The keyboard Synaptics touchpad (PS / 2) uses ApplePS2SmartTouchPad.kext, EMlyDinEsH v4.7b5, and supports multi-touch gestures.
+
+* Sleep and wake up normally
+
+
+Disabled devices and BIOS settings
+--------------------------------------------------------------------------
+* WWAN (no module)
+* TrackPad Synaptics fingerprint reader fails to drive
+* Thunderbolt BIOS Assist is set to Disable in the BIOS (Enable is determined by BIOS control, Disabled is determined by operating system control), "Security level": No Security (Allows automatic connection of Thunderbolt devices and TYPEC).
+* The USB item Always on USB is set to enable in the BIOS, and the following sub-item Charge in Battery Mode is set to enable (so that the Thunderbolt port type-c can hot-plug type-c peripherals)
+* Turn off secure boot
+
+UEFI BIOS firmware revision
+--------------------------------------------------------------------------
+* BIOS version 1.20, 1.21, 1.22 common
+
+currently existing problems
+--------------------------------------------------------------------------
+* The fingerprint cannot be driven and the touchpad is defective.
+
+Remark
+--------------------------------------------------------------------------
