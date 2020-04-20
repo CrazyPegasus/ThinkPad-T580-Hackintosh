@@ -64,7 +64,6 @@ UEFI BIOS固件修订
 
 * 1.
 打开终端输入一下命令，即可对系统进行读写：
-------
 * sudo mount -uw /
 * killall Finder  
 
