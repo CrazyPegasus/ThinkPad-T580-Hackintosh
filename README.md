@@ -66,7 +66,7 @@ sudo mount -uw /
 killall Finder  
 
 2.下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
-然后修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /
+,修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /
 
 
 # English
