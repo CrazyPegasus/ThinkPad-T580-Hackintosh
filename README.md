@@ -140,6 +140,5 @@ Starting from 10.15, it is not possible to patch through KernelToPatch of config
 ------
 * sudo mount -uw /
 * killall Finder
-
-* 2. Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/
+* 2.Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/
 Then fix the permission cache and restart: sudo touch / System / Library / Extensions / && sudo kextcache -u /
