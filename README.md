@@ -59,7 +59,14 @@ UEFI BIOS固件修订
 
 备注
 --------
+从10.15开始，S/L/E下无法通过config的KernelToPatch来打补丁了，所以需要自己手动打补丁，我把10.15.4的已打好的补丁放上了，自行替换S/L/E下同名驱动文件。
+1.
+打开终端输入一下命令，即可对系统进行读写：
+sudo mount -uw /
+killall Finder  
 
+2.下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext下
+然后修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /
 
 
 # English
@@ -124,3 +131,11 @@ currently existing problems
 
 Remark
 --------------------------------------------------------------------------
+Starting from 10.15, it is not possible to patch through KernelToPatch of config under S / L / E, so I need to manually patch it. I put the patch of 10.15.4 on it and replace it under S / L / E Driver file with the same name.
+1.
+Open the terminal and enter the command to read and write the system:
+sudo mount -uw /
+killall Finder
+
+2. Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext
+Then fix the permission cache and restart: sudo touch / System / Library / Extensions / && sudo kextcache -u /
