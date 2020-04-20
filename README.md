@@ -76,9 +76,9 @@ UEFI BIOS固件修订
 * killall Finder  
 -----
 
-下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
+*  下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
 ,修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /
------
+
 
 
 # English
