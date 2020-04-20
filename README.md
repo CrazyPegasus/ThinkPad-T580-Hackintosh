@@ -65,7 +65,7 @@ UEFI BIOS固件修订
 sudo mount -uw /
 killall Finder  
 
-2.下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext下
+2.下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
 然后修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /
 
 
@@ -137,5 +137,5 @@ Open the terminal and enter the command to read and write the system:
 sudo mount -uw /
 killall Finder
 
-2. Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext
+2. Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/
 Then fix the permission cache and restart: sudo touch / System / Library / Extensions / && sudo kextcache -u /
