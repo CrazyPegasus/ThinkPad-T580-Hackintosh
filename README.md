@@ -147,10 +147,17 @@ Solve the 10.15.x type-c, HDMI no output problem:
 Starting from 10.15, it is not possible to patch through KernelToPatch of config under S / L / E, so I need to manually patch it. I put the patch of 10.15.4 on it and replace it under S / L / E Driver file with the same name.
 
 *  the first method:
-Run sudo mount -uw / && killall Finder and sudo kextcache -i / once after updating the system version of the size, and then restart the machine.
 ----
+
+Run sudo mount -uw / && killall Finder and sudo kextcache -i / once after updating the system version of the size, and then restart the machine.
+
+----
+
 *  The second method:
+----
+
 Open the terminal and enter the command to read and write the system:
+
 ----
 * sudo mount -uw /
 * killall Finder
