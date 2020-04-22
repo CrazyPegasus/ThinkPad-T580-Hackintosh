@@ -64,7 +64,7 @@ UEFI BIOS固件修订
 *  第一种方法：
 ----
 
-每次更新大小系统版本后执行一次sudo mount -uw / && killall Finder和sudo kextcache -i /，然后重启机器即可。如果方法一不灵就强制使用方法二暴力破解了。
+每次更新大小系统版本后终端里执行一次sudo mount -uw / && killall Finder和sudo kextcache -i /，然后重启机器即可。如果方法一不灵就强制使用方法二暴力破解了。
 
 ----
 
@@ -149,7 +149,7 @@ Starting from 10.15, it is not possible to patch through KernelToPatch of config
 *  the first method:
 ----
 
-Run sudo mount -uw / && killall Finder and sudo kextcache -i / once after updating the system version of the size, and then restart the machine.If the first method fails, the second method is forced to brute force.
+Terminal Run sudo mount -uw / && killall Finder and sudo kextcache -i / once after updating the system version of the size, and then restart the machine.If the first method fails, the second method is forced to brute force.
 
 ----
 
