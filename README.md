@@ -85,7 +85,7 @@ UEFI BIOS固件修订
 
 
 
-# Chinese Version
+# English Version
 # MacOS on Lenovo ThinkPad T580 (this guide also applies to P52s i7-8550u, 8250u should be general in theory, not T480s)
 
 This repository contains a sample configuration of 10.14, 10.15 running macOS (currently Mojave, Catalina, adapted Big Sur) on Lenovo ThinkPad T580
@@ -109,23 +109,23 @@ Machine configuration table and driving situation
 
 *~~Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free~~
 
-* The wireless network card is changed to DW1820A disassembly card (the original DELL disassembly card does not need to shield pins)
+ * The wireless network card is changed to DW1820A disassembly card (the original DELL disassembly card does not need to shield pins)
 
-* Realtek Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11 to support automatic switching between headphones and its own speakers.
+ * Realtek Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11 to support automatic switching between headphones and its own speakers.
 
-* Intel UHD Graphics 620 (Nvidia MX150 is disabled, macOS does not support Optimus)
+ * Intel UHD Graphics 620 (Nvidia MX150 is disabled, macOS does not support Optimus)
 
-* ACPI hot patch power management and dual battery status
+ * ACPI hot patch power management and dual battery status
 
-* SD card reader uses USB3.0 channel, you need to open this USB port to use
+ * SD card reader uses USB3.0 channel, you need to open this USB port to use
 
-* Thunderbolt 3 [Thunderbolt BIOS Assist" in the BIOS needs to be set: Disable, "Security level": No Security (allows automatic connection of Thunderbolt devices). In this way, the front-end type USB type-c port can work in macOS and can be hot-swapped. DP/HDMI through USB type-C: the video works normally, the docking station works normally, the Thunderbolt 3 device works normally, and the hot plug works normally]
+ * Thunderbolt 3 [Thunderbolt BIOS Assist" in the BIOS needs to be set: Disable, "Security level": No Security (allows automatic connection of Thunderbolt devices). In this way, the front-end type USB type-c port can work in macOS and can be hot-swapped. DP/HDMI through USB type-C: the video works normally, the docking station works normally, the Thunderbolt 3 device works normally, and the hot plug works normally]
 
-* The machine comes with an independent HDMI port: it can output 4k@30HZ to the display. When connected, the audio device HDMI will be displayed and used normally.
+ * The machine comes with an independent HDMI port: it can output 4k@30HZ to the display. When connected, the audio device HDMI will be displayed and used normally.
 
-* ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures. ~~
-* The keyboard touchpad has been replaced with acidanthera/VoodooPS2Controller, supports multi-touch gestures, and is easier to use than ApplePS2SmartTouchPad
-* All keyboard shortcuts F1-F12 have been enabled, please refer to https://github.com/MSzturc/ThinkpadAssistant, and thank MSzturc and developers
+ * ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures. ~~
+ * The keyboard touchpad has been replaced with acidanthera/VoodooPS2Controller, supports multi-touch gestures, and is easier to use than ApplePS2SmartTouchPad
+ * All keyboard shortcuts F1-F12 have been enabled, please refer to https://github.com/MSzturc/ThinkpadAssistant, and thank MSzturc and developers
 
 ThinkPad Black Apple Sleep, Sleep and Wake
 ----------
@@ -135,8 +135,8 @@ ThinkPad Black Apple Sleep, Sleep and Wake
 Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC, and add -hbfxbeta to the startup parameters, hibernatemode 3 sleep can be achieved.
 If you encounter an occasional random wake-up or restart after closing the lid, disable proximitywake: sudo pmset -a proximitywake 0
  * 2. hibernatemode 0 (this sleep mode is only written to memory)
-sudo pmset -a hibernatemode 0
-sudo pmset -a proximitywake 0
+sudo pmset -a hibernatemode 0  
+sudo pmset -a proximitywake 0  
 
 Disabled devices and BIOS settings
 -----------
@@ -163,8 +163,8 @@ Starting from 10.15, it is not possible to patch through KernelToPatch in config
 Run sudo mount -uw /&& killall Finder and sudo kextcache -i / in the terminal once after updating the size system version, and then restart the machine. If the first method fails, the second method is forced to brute force.
 *  The second method:
 Open the terminal and enter the command to read and write the system:
- sudo mount -uw /
- killall Finder
+ sudo mount -uw /  
+ killall Finder  
 -----
 * Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/
 , Just fix the permission cache and restart: sudo touch /System/Library/Extensions/ && sudo kextcache -u /
