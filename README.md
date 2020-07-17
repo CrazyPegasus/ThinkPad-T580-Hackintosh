@@ -85,84 +85,86 @@ UEFI BIOS固件修订
 
 
 
-# English
---------
+# Chinese Version
+# MacOS on Lenovo ThinkPad T580 (this guide also applies to P52s i7-8550u, 8250u should be general in theory, not T480s)
 
-# MacOS on Lenovo ThinkPad T580 (this guide also applies to P52s i7-8550u, 8250u should theoretically be universal, not T480s)
+This repository contains a sample configuration of 10.14, 10.15 running macOS (currently Mojave, Catalina, adapted Big Sur) on Lenovo ThinkPad T580
+-------------------------------------------------- ------------------------
 
-This repository contains 10.14,10.15 example configurations running macOS (currently Mojave, Catalina) on Lenovo ThinkPad T580
 Machine configuration table and driving situation
---------------------------------------------------------------------------
+---------
+* Lenovo ThinkPad T580 [4k UHD display: 3840x2160 (BOE NV156QUM-N44, non-touch)]
 
-Lenovo ThinkPad T580 [4k UHD display: 3840x2160 (BOE BOE NV156QUM-N44, non-touch)]
---------------------------------------------------------------------------
 * Intel i7-8550U CPU
 
-* 16GB RAM DDR4 2400-SODIMM
+* Memory 16GB RAM DDR4 2400-SODIMM
 
-* Toshiba Q200EX SSD + 128G Toshiba NVMe Lenovo with strap
+* Toshiba Q200EX SSD+128G Toshiba nvme Lenovo with strap
 
 * Intel Ethernet I219-V4 wired network card
 
-* ~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 does not work properly)~~
+*~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 cannot work normally) ~~
 
-* ~~Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code~~
+*~~The Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code~~
 
-* ~~Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free~~
+*~~Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free~~
 
-* Wireless network card changed to DW1820A disassembly card (original DELL disassembly card does not require shielding pins)
+* The wireless network card is changed to DW1820A disassembly card (the original DELL disassembly card does not need to shield pins)
 
-* Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11, which supports automatic switching between the headset and the built-in speaker.
+* Realtek Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11 to support automatic switching between headphones and its own speakers.
 
 * Intel UHD Graphics 620 (Nvidia MX150 is disabled, macOS does not support Optimus)
 
 * ACPI hot patch power management and dual battery status
 
-* SD card reader uses usb3.0 channel, you need to open this USB port to use
+* SD card reader uses USB3.0 channel, you need to open this USB port to use
 
-* Thunderbolt 3 [Thunderbolt BIOS Assist needs to be set in the BIOS: Disable, "Security level": No Security (Allows automatic connection to Thunderbolt devices). In this way, the front-end USB type-c port can work in macOS and can be hot-plugged. DP / HDMI via USB type-C: the video works normally, the docking station is normal, the Thunderbolt 3 device works normally, and the hot-plug is normal
+* Thunderbolt 3 [Thunderbolt BIOS Assist" in the BIOS needs to be set: Disable, "Security level": No Security (allows automatic connection of Thunderbolt devices). In this way, the front-end type USB type-c port can work in macOS and can be hot-swapped. DP/HDMI through USB type-C: the video works normally, the docking station works normally, the Thunderbolt 3 device works normally, and the hot plug works normally]
 
-* The machine comes with a separate HDMI port: it can output 4k @ 30HZ to the display. When connected, the audio device HDMI is displayed and used normally.
+* The machine comes with an independent HDMI port: it can output 4k@30HZ to the display. When connected, the audio device HDMI will be displayed and used normally.
 
-* The keyboard Synaptics touchpad (PS / 2) uses ApplePS2SmartTouchPad.kext, EMlyDinEsH v4.7b5, and supports multi-touch gestures.
+* ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures. ~~
+* The keyboard touchpad has been replaced with acidanthera/VoodooPS2Controller, supports multi-touch gestures, and is easier to use than ApplePS2SmartTouchPad
+* All keyboard shortcuts F1-F12 have been enabled, please refer to https://github.com/MSzturc/ThinkpadAssistant, and thank MSzturc and developers
 
-* Sleep and wake up normally
+ThinkPad Black Apple Sleep, Sleep and Wake
+----------
+* Sleep and wake up normally, two ways
 
+ * 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)
+Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC, and add -hbfxbeta to the startup parameters, hibernatemode 3 sleep can be achieved.
+If you encounter an occasional random wake-up or restart after closing the lid, disable proximitywake: sudo pmset -a proximitywake 0
+ * 2. hibernatemode 0 (this sleep mode is only written to memory)
+sudo pmset -a hibernatemode 0
+sudo pmset -a proximitywake 0
 
 Disabled devices and BIOS settings
---------------------------------------------------------------------------
+-----------
 * WWAN (no module)
-* TrackPad Synaptics fingerprint reader fails to drive
-* Thunderbolt BIOS Assist is set to Disable in the BIOS (Enable is determined by BIOS control, Disabled is determined by operating system control), "Security level": No Security (Allows automatic connection of Thunderbolt devices and TYPEC).
-* The USB item Always on USB is set to enable in the BIOS, and the following sub-item Charge in Battery Mode is set to enable (so that the Thunderbolt port type-c can hot-plug type-c peripherals)
-* Turn off secure boot
+* TrackPad Synaptics fingerprint reader cannot be driven
+* Set Thunderbolt BIOS Assist to Disable in the BIOS (Enable Thunderbolt is determined by BIOS control, Disabled Thunderbolt is determined by operating system control), "Security level": No Security (allows automatic connection of Thunderbolt devices and TYPEC).
+* In the BIOS, set the USB item Always on USB to enable, and the following sub-item Charge in Battery Mode is set to enable (so that the lightning port type-c can be hot-swapped type-c peripherals)
+* Turn off safe boot
 
 UEFI BIOS firmware revision
---------------------------------------------------------------------------
-* BIOS version 1.20, 1.21, 1.22 common
+-----------
+* BIOS version 1.20-1.24 common
+
 
 currently existing problems
---------------------------------------------------------------------------
-* The fingerprint cannot be driven and the touchpad is defective.
+-------------
+* Fingerprint cannot be driven.
 
-Remark
---------------------------------------------------------------------------
+Remarks
+--------
 Solve the 10.15.x type-c, HDMI no output problem:
-Starting from 10.15, it is not possible to patch through KernelToPatch of config under S / L / E, so I need to manually patch it. I put the patch of 10.15.4 on it and replace it under S / L / E Driver file with the same name.
-
+Starting from 10.15, it is not possible to patch through KernelToPatch in config under S/L/E, so I need to manually patch it. I put the patch that has been patched in 10.15.4 and replace it under S/L/E. Driver file with the same name.
 *  the first method:
-----
-
-Terminal Run sudo mount -uw / && killall Finder and sudo kextcache -i / once after updating the system version of the size, and then restart the machine.If the first method fails, the second method is forced to brute force.
-
-----
-
+Run sudo mount -uw /&& killall Finder and sudo kextcache -i / in the terminal once after updating the size system version, and then restart the machine. If the first method fails, the second method is forced to brute force.
 *  The second method:
-----
-
 Open the terminal and enter the command to read and write the system:
-
-----
-* sudo mount -uw /
-* killall Finder
-* Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/ to fix the permission cache and restart: sudo touch / System / Library / Extensions / && sudo kextcache -u /
+ sudo mount -uw /
+ killall Finder
+-----
+* Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/
+, Just fix the permission cache and restart: sudo touch /System/Library/Extensions/ && sudo kextcache -u /
