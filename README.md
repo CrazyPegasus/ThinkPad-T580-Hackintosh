@@ -62,12 +62,12 @@ sudo pmset -a proximitywake 0
 
 UEFI BIOS固件修订
 -----------
-* BIOS版本 1.20,1.21,1.22通用
+* BIOS版本 1.20-1.24通用
 
 
 目前存在的问题
 -------------
-* 指纹无法驱动，触摸板还有缺陷。
+* 指纹无法驱动。
 
 备注
 --------
@@ -77,8 +77,8 @@ UEFI BIOS固件修订
 每次更新大小系统版本后终端里执行一次sudo mount -uw / && killall Finder和sudo kextcache -i /，然后重启机器即可。如果方法一不灵就强制使用方法二暴力破解了。    
 *  第二种方法：
 打开终端输入一下命令，即可对系统进行读写：  
-  sudo mount -uw /    
-  killall Finder      
+ sudo mount -uw /    
+ killall Finder      
 -----
 *  下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
 ,修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /  
