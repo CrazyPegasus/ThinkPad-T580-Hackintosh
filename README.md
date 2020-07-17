@@ -123,7 +123,7 @@ Machine configuration table and driving situation
 
 * The machine comes with an independent HDMI port: it can output 4k@30HZ to the display. When connected, the audio device HDMI will be displayed and used normally.
 
-* ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures. ~~
+* ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures.~~
 * The keyboard touchpad has been replaced with acidanthera/VoodooPS2Controller, supports multi-touch gestures, and is easier to use than ApplePS2SmartTouchPad
 * All keyboard shortcuts F1-F12 have been enabled, please refer to https://github.com/MSzturc/ThinkpadAssistant, and thank MSzturc and developers
 
