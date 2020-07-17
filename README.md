@@ -103,38 +103,38 @@ Machine configuration table and driving situation
 
 * Intel Ethernet I219-V4 wired network card
 
-* ~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 cannot work normally) ~~
+* ~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 cannot work normally)~~
 
-*~~The Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code~~
+* ~~The Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code~~
 
-*~~Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free~~
+* ~~Bluetooth device chipset 20702B0, firmware version: v150 c9318 driver-free~~
 
- * The wireless network card is changed to DW1820A disassembly card (the original DELL disassembly card does not need to shield pins)
+* The wireless network card is changed to DW1820A disassembly card (the original DELL disassembly card does not need to shield pins)
 
- * Realtek Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11 to support automatic switching between headphones and its own speakers.
+* Realtek Realtek ALC3287 ("ALC257") supports AppleALC.kext and layout-id: 11 to support automatic switching between headphones and its own speakers.
 
- * Intel UHD Graphics 620 (Nvidia MX150 is disabled, macOS does not support Optimus)
+* Intel UHD Graphics 620 (Nvidia MX150 is disabled, macOS does not support Optimus)
 
- * ACPI hot patch power management and dual battery status
+* ACPI hot patch power management and dual battery status
 
- * SD card reader uses USB3.0 channel, you need to open this USB port to use
+* SD card reader uses USB3.0 channel, you need to open this USB port to use
 
- * Thunderbolt 3 [Thunderbolt BIOS Assist" in the BIOS needs to be set: Disable, "Security level": No Security (allows automatic connection of Thunderbolt devices). In this way, the front-end type USB type-c port can work in macOS and can be hot-swapped. DP/HDMI through USB type-C: the video works normally, the docking station works normally, the Thunderbolt 3 device works normally, and the hot plug works normally]
+* Thunderbolt 3 [Thunderbolt BIOS Assist" in the BIOS needs to be set: Disable, "Security level": No Security (allows automatic connection of Thunderbolt devices). In this way, the front-end type USB type-c port can work in macOS and can be hot-swapped. DP/HDMI through USB type-C: the video works normally, the docking station works normally, the Thunderbolt 3 device works normally, and the hot plug works normally]
 
- * The machine comes with an independent HDMI port: it can output 4k@30HZ to the display. When connected, the audio device HDMI will be displayed and used normally.
+* The machine comes with an independent HDMI port: it can output 4k@30HZ to the display. When connected, the audio device HDMI will be displayed and used normally.
 
- * ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures. ~~
- * The keyboard touchpad has been replaced with acidanthera/VoodooPS2Controller, supports multi-touch gestures, and is easier to use than ApplePS2SmartTouchPad
- * All keyboard shortcuts F1-F12 have been enabled, please refer to https://github.com/MSzturc/ThinkpadAssistant, and thank MSzturc and developers
+* ~~Keyboard Synaptics touchpad (PS/2) uses ApplePS2SmartTouchPad.kext, v4.7b5 of EMlyDinEsH, supports multi-touch gestures. ~~
+* The keyboard touchpad has been replaced with acidanthera/VoodooPS2Controller, supports multi-touch gestures, and is easier to use than ApplePS2SmartTouchPad
+* All keyboard shortcuts F1-F12 have been enabled, please refer to https://github.com/MSzturc/ThinkpadAssistant, and thank MSzturc and developers
 
 ThinkPad Black Apple Sleep, Sleep and Wake
 ----------
 * Sleep and wake up normally, two ways
 
- * 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)  
+* 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)  
 Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC, and add -hbfxbeta to the startup parameters, hibernatemode 3 sleep can be achieved.
 If you encounter an occasional random wake-up or restart after closing the lid, disable proximitywake: sudo pmset -a proximitywake 0
- * 2. hibernatemode 0 (this sleep mode is only written to memory)  
+* 2. hibernatemode 0 (this sleep mode is only written to memory)  
 sudo pmset -a hibernatemode 0  
 sudo pmset -a proximitywake 0  
 
