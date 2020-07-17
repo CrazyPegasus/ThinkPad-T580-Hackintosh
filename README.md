@@ -38,7 +38,17 @@
 * 机器自带独立的HDMI端口：可以输出4k@30HZ到显示器。连接时会显示音频设备HDMI，并正常使用。
 
 * 键盘Synaptics触摸板（PS / 2）使用ApplePS2SmartTouchPad.kext，EMlyDinEsH的v4.7b5，支持多点触控手势。
-* 睡眠和唤醒正常
+
+ThinkPad 黑苹果休眠、睡眠和唤醒
+----------
+* 睡眠和唤醒正常，两种方式
+
+ 1.hibernatemode 3 （这种睡眠方式可能会影响硬盘性能和寿命）
+往 EFI/CLOVER/kexts/Other 下面扔一个 HibernationFixup.kext，然后在启动参数里加上 -hbfxbeta，可以实现 hibernatemode 3 休眠。
+如果合盖后遇到偶发性的随机唤醒或者重启，禁用 proximitywake ：sudo pmset -a proximitywake 0 
+ 2.hibernatemode 0 （这种睡眠方式只写入到内存）
+sudo pmset -a hibernatemode 0
+sudo pmset -a proximitywake 0
 
 已禁用的设备和BIOS设置
 -----------
