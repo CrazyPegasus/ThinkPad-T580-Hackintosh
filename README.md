@@ -37,7 +37,9 @@
 
 * 机器自带独立的HDMI端口：可以输出4k@30HZ到显示器。连接时会显示音频设备HDMI，并正常使用。
 
-* 键盘Synaptics触摸板（PS / 2）使用ApplePS2SmartTouchPad.kext，EMlyDinEsH的v4.7b5，支持多点触控手势。
+* ~~键盘Synaptics触摸板（PS / 2）使用ApplePS2SmartTouchPad.kext，EMlyDinEsH的v4.7b5，支持多点触控手势。~~
+* 键盘触摸板已使用acidanthera/VoodooPS2Controller替代，支持多点触控手势，比ApplePS2SmartTouchPad好用
+* 键盘F1-F12快捷键已经全部启用，参照https://github.com/MSzturc/ThinkpadAssistant，鸣谢MSzturc和开发者们
 
 ThinkPad 黑苹果休眠、睡眠和唤醒
 ----------
