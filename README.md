@@ -76,7 +76,6 @@ UEFI BIOS固件修订
 *  第一种方法：
 每次更新大小系统版本后终端里执行一次sudo mount -uw / && killall Finder和sudo kextcache -i /，然后重启机器即可。如果方法一不灵就强制使用方法二暴力破解了。    
 *  第二种方法：
------  
 打开终端输入一下命令，即可对系统进行读写：  
 * sudo mount -uw /  
 * killall Finder    
