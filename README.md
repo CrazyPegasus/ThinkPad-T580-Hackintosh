@@ -103,7 +103,7 @@ Machine configuration table and driving situation
 
 * Intel Ethernet I219-V4 wired network card
 
-*~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 cannot work normally) ~~
+* ~~Mac original wireless network card bcm94360cs2 (original Intel AC8265 cannot work normally) ~~
 
 *~~The Wi-Fi device chipset is (0x14E4, 0x117) Display Airport Extreme, use AirportBrcmFixup.kext to modify the channel country code~~
 
@@ -131,10 +131,10 @@ ThinkPad Black Apple Sleep, Sleep and Wake
 ----------
 * Sleep and wake up normally, two ways
 
- * 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)
+ * 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)  
 Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC, and add -hbfxbeta to the startup parameters, hibernatemode 3 sleep can be achieved.
 If you encounter an occasional random wake-up or restart after closing the lid, disable proximitywake: sudo pmset -a proximitywake 0
- * 2. hibernatemode 0 (this sleep mode is only written to memory)
+ * 2. hibernatemode 0 (this sleep mode is only written to memory)  
 sudo pmset -a hibernatemode 0  
 sudo pmset -a proximitywake 0  
 
