@@ -44,7 +44,7 @@ ThinkPad 黑苹果休眠、睡眠和唤醒
 * 睡眠和唤醒正常，两种方式
 
  * 1.hibernatemode 3 （这种睡眠方式可能会影响硬盘性能和寿命）  
-往 EFI/CLOVER/kexts/Other 下面扔一个 HibernationFixup.kext，然后在启动参数里加上 -hbfxbeta，可以实现 hibernatemode 3 休眠。
+往 EFI/CLOVER/kexts/Other和OC引导的kexts下面扔一个 HibernationFixup.kext，然后在启动参数里加上 -hbfxbeta，可以实现 hibernatemode 3 休眠。
 如果合盖后遇到偶发性的随机唤醒或者重启，禁用 proximitywake ：sudo pmset -a proximitywake 0 
  * 2.hibernatemode 0 （这种睡眠方式只写入到内存）  
 sudo pmset -a hibernatemode 0  
@@ -73,14 +73,12 @@ UEFI BIOS固件修订
 从10.15开始，S/L/E下无法通过config的KernelToPatch来打补丁了，所以需要自己手动打补丁，我把10.15.4的已打好的补丁放上了，自行替换S/L/E下同名驱动文件。
 *  第一种方法：
 ----
-
-每次更新大小系统版本后终端里执行一次sudo mount -uw / && killall Finder和sudo kextcache -i /，然后重启机器即可。如果方法一不灵就强制使用方法二暴力破解了。
+每次更新大小系统版本后终端里执行一次sudo mount -uw / && killall Finder和sudo kextcache -i /，然后重启机器即可。如果方法一不灵就强制使用方法二暴力破解了。  
 
 ----
 
 *  第二种方法：
------
-
+-----  
 打开终端输入一下命令，即可对系统进行读写：
 * sudo mount -uw /
 * killall Finder  
