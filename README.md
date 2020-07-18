@@ -46,7 +46,7 @@ ThinkPad 黑苹果休眠、睡眠和唤醒
 * 睡眠和唤醒正常，两种方式
 
  * 1.hibernatemode 3 （这种睡眠方式可能会影响硬盘性能和寿命)   
-往 EFI/CLOVER/kexts/Other和OC引导的kexts下面扔一个 HibernationFixup.kext，然后在启动参数里加上 -hbfxbeta，可以实现 hibernatemode 3 休眠。
+往 EFI/CLOVER/kexts/Other和OC引导的kexts下面扔一个 HibernationFixup.kext，可以实现 hibernatemode 3 休眠。
 如果合盖后遇到偶发性的随机唤醒或者重启，禁用 proximitywake ：sudo pmset -a proximitywake 0 
  * 2.hibernatemode 0 （这种睡眠方式只写入到内存)  
 sudo pmset -a hibernatemode 0  
@@ -132,7 +132,7 @@ ThinkPad Black Apple Sleep, Sleep and Wake
 * Sleep and wake up normally, two ways
 
 * 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)  
-Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC, and add -hbfxbeta to the startup parameters, hibernatemode 3 sleep can be achieved.
+Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC,hibernatemode 3 sleep can be achieved.
 If you encounter an occasional random wake-up or restart after closing the lid, disable proximitywake: sudo pmset -a proximitywake 0
 * 2. hibernatemode 0 (this sleep mode is only written to memory)  
 sudo pmset -a hibernatemode 0  
