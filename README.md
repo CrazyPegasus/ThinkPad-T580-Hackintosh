@@ -48,7 +48,7 @@ ThinkPad 黑苹果休眠、睡眠和唤醒
  * 1.hibernatemode 3 （这种睡眠方式可能会影响硬盘性能和寿命，这也是白果笔记本默认睡眠方式)   
 往 EFI/CLOVER/kexts/Other和OC引导的kexts下面扔一个 HibernationFixup.kext，可以实现 hibernatemode 3 休眠。
 如果合盖后遇到偶发性的随机唤醒或者重启，禁用 proximitywake ：sudo pmset -a proximitywake 0 
- * 2.hibernatemode 0 （这种睡眠方式只写入到内存)  
+ * 2.hibernatemode 0 （这种睡眠方式只写入到内存，推荐使用) 
 sudo pmset -a hibernatemode 0  
 sudo pmset -a proximitywake 0
 
@@ -62,7 +62,7 @@ sudo pmset -a proximitywake 0
 
 UEFI BIOS固件修订
 -----------
-* BIOS版本 1.20-1.24通用
+* BIOS版本 1.20-1.26通用
 
 
 目前存在的问题
@@ -134,7 +134,7 @@ ThinkPad Black Apple Sleep, Sleep and Wake
 * 1. hibernatemode 3 (this sleep mode may affect hard disk performance and life)  
 Toss a HibernationFixup.kext under the kexts of EFI/CLOVER/kexts/Other and OC,hibernatemode 3 sleep can be achieved.
 If you encounter an occasional random wake-up or restart after closing the lid, disable proximitywake: sudo pmset -a proximitywake 0
-* 2. hibernatemode 0 (this sleep mode is only written to memory)  
+* 2. hibernatemode 0 (this sleep mode is only written to memory，Recommended Use)  
 sudo pmset -a hibernatemode 0  
 sudo pmset -a proximitywake 0  
 
@@ -148,7 +148,7 @@ Disabled devices and BIOS settings
 
 UEFI BIOS firmware revision
 -----------
-* BIOS version 1.20-1.24 common
+* BIOS version 1.20-1.26 common
 
 
 currently existing problems
