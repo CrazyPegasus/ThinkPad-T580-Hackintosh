@@ -86,6 +86,11 @@ UEFI BIOS固件修订
 MacBookPro14,1 完美；
 MacBookPro14,2 完美；
 MacBookPro15,2 完美，可以同时HDMI，type-c；
+MacBookPro14,3 type-c，HDMI，无输出-需要定制端口；
+MacBookPro15,1 type-c，HDMI，无输出-需要定制端口；
+MacBookPro15,3 type-c，HDMI，无输出-需要定制端口；
+MacBookPro16,1 type-c，HDMI，无输出-需要定制端口；
+MacBookPro16,4 type-c，HDMI，无输出-需要定制端口；
 MacBookPro15,4 type-c输出正常，HDMI正常，不能同时；
 MacBookPro16,2 type-c输出正常，HDMI正常，不能同时；
 MacBookPro16,3 type-c输出正常，HDMI正常，不能同时；
