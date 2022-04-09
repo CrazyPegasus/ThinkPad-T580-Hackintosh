@@ -83,20 +83,31 @@ UEFI BIOS固件修订
 *  下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
 ,修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /  
 * 注意：关于macOS下HDMI和typec输出请使用以下机型：
+ 
  MacBookPro14,1 完美；
  
  MacBookPro14,2 完美；
  
 MacBookPro15,2 完美，可以同时HDMI，type-c；
+
 MacBookPro14,3 type-c，HDMI，无输出-需要定制端口；
+
 MacBookPro15,1 type-c，HDMI，无输出-需要定制端口；
+
 MacBookPro15,3 type-c，HDMI，无输出-需要定制端口；
+
 MacBookPro16,1 type-c，HDMI，无输出-需要定制端口；
+
 MacBookPro16,4 type-c，HDMI，无输出-需要定制端口；
+
 MacBookPro15,4 type-c输出正常，HDMI正常，不能同时；
+
 MacBookPro16,2 type-c输出正常，HDMI正常，不能同时；
+
 MacBookPro16,3 type-c输出正常，HDMI正常，不能同时；
+
 其他机型比如MacBook Air8，1和8，2还有9，1没测试，有兴趣自己测试一下；
+
 尽量避免使用:MacBookPro14,3；MacBookPro15,1；MacBookPro15,3；MacBookPro16,1；MacBookPro16,4这些机型。
 
 
@@ -185,10 +196,15 @@ Open the terminal and enter the command to read and write the system:
 * Download AppleGraphicsDevicePolicy.kext and replace it under /System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/
 , Just fix the permission cache and restart: sudo touch /System/Library/Extensions/ && sudo kextcache -u /
 * Note: For HDMI and typec output under macOS, please use the following models: 
+* 
  MacBookPro14,1 perfect; 
+ 
  MacBookPro14,2 perfect; 
+ 
  MacBookPro15,2 perfect, can simultaneously HDMI, type-c; 
+ 
  MacBookPro14,3 type-c, HDMI, no output -Custom port required; 
+ 
  MacBookPro15,1 type-c, HDMI, no output -custom port required; 
  MacBookPro15,3 type-c, HDMI, no output -custom port required; 
  MacBookPro16,1 type-c, HDMI, no output - required Custom port; 
