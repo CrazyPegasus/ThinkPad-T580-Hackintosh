@@ -2,7 +2,7 @@
 # 中文版
 # 联想ThinkPad T580上的macOS（本指南也适用于P52s i7-8550u，8250u理论上应该通用，不适用T480s）
 
-此存储库包含10.14,10.15在Lenovo ThinkPad T580上运行macOS（目前为Mojave，Catalina，已适配Big Sur ）的示例配置
+此存储库包含10.13或者更高版本系统在Lenovo ThinkPad T580上运行macOS的示例配置
 --------------------------------------------------------------------------
 
 机器配置表和驱动情况
@@ -102,7 +102,7 @@ UEFI BIOS固件修订
 # English Version
 # MacOS on Lenovo ThinkPad T580 (this guide also applies to P52s i7-8550u, 8250u should be general in theory, not T480s)
 
-This repository contains a sample configuration of 10.14, 10.15 running macOS (currently Mojave, Catalina, adapted Big Sur) on Lenovo ThinkPad T580
+This repository contains a sample configuration for 10.13 or later running macOS on a Lenovo ThinkPad T580
 -------------------------------------------------- ------------------------
 
 Machine configuration table and driving situation
