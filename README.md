@@ -62,7 +62,7 @@ sudo pmset -a proximitywake 0
 
 UEFI BIOS固件修订
 -----------
-* BIOS版本 1.20-1.26通用
+* BIOS版本 1.20-1.31通用
 
 
 目前存在的问题
@@ -95,7 +95,7 @@ MacBookPro15,4 type-c输出正常，HDMI正常，不能同时；
 MacBookPro16,2 type-c输出正常，HDMI正常，不能同时；
 MacBookPro16,3 type-c输出正常，HDMI正常，不能同时；
 其他机型比如MacBook Air8，1和8，2还有9，1没测试，有兴趣自己测试一下；
-巧的是发到Git仓库的正好使用了MacBookPro14,3；MacBookPro15,1；MacBookPro15,3；MacBookPro16,1；MacBookPro16,4这些机型。
+尽量避免使用:MacBookPro14,3；MacBookPro15,1；MacBookPro15,3；MacBookPro16,1；MacBookPro16,4这些机型。
 
 
 
@@ -162,7 +162,7 @@ Disabled devices and BIOS settings
 
 UEFI BIOS firmware revision
 -----------
-* BIOS version 1.20-1.26 common
+* BIOS version 1.20-1.31 common
 
 
 currently existing problems
