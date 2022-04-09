@@ -83,8 +83,10 @@ UEFI BIOS固件修订
 *  下载AppleGraphicsDevicePolicy.kext然后替换到/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/下
 ,修复权限缓存重启即可：sudo touch /System/Library/Extensions/ && sudo kextcache -u /  
 * 注意：关于macOS下HDMI和typec输出请使用以下机型：
-  MacBookPro14,1 完美；
-  MacBookPro14,2 完美；
+ MacBookPro14,1 完美；
+ 
+ MacBookPro14,2 完美；
+ 
 MacBookPro15,2 完美，可以同时HDMI，type-c；
 MacBookPro14,3 type-c，HDMI，无输出-需要定制端口；
 MacBookPro15,1 type-c，HDMI，无输出-需要定制端口；
